@@ -2,3 +2,6 @@
 vendor/*
 **/.sass-cache
 **/.sass-cache/*
+**/css/maps
+**/css/maps/*
+**/node_modules
