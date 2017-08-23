@@ -1,0 +1,24 @@
+// _case-studies.scss
+
+.case-studies {
+    background: $cream;
+    position: relative;
+    z-index: 10;
+    overflow-y: scroll;
+    //
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.4s;
+
+    .case-studies-wrapper {
+        width: 100%;
+        padding: 0 2.5rem;
+        max-width: $contentWidth;
+        margin: 0 auto;
+    }
+
+    &.show {
+        pointer-events: all;
+        opacity: 1;
+    }
+}

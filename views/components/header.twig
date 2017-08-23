@@ -3,7 +3,15 @@
 {% include 'components/header-system.twig' %}
 
 <header class="header">
-    <h1>
-        Header
-    </h1>
+    
+    <div class="back">
+        &#8592;
+    </div>
+
+    {% include 'components/circles.twig' with
+          {
+              circleCount: 28
+          }
+      %}  
+
 </header>

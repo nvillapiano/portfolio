@@ -4,6 +4,10 @@ html, body {
     transition: opacity 0.3s;
     //
     @include raleway-regular();
+
+    &.no-overflow {
+        overflow: hidden;
+    }
 }
 
 *, *:before, *:after {
@@ -12,6 +16,16 @@ html, body {
 
 img, svg {
     max-width: 100%;
+}
+
+::-moz-selection { 
+    background: $blue;
+    color: $cream;
+}
+
+::selection { 
+    background: $blue;
+    color: $cream;
 }
 
 // Fade
@@ -23,3 +37,4 @@ img, svg {
         opacity: 1;
     }
 }
+

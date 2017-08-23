@@ -1,7 +1,27 @@
 {% include "components/header.twig" %}
 
 <div class="container">
-  <h1>{{ title }}</h1>
+    <section class="projects-trigger">
+        <div class="copy">
+            <h1>
+                Projects
+            </h1>
+            <h4>
+                A selection of work that I'm proud of for various reasons.
+            </h4>        
+        </div>
+    </section>
+
+    <section class="me-trigger">
+        <h1>
+            Me
+        </h1>
+        <h4>
+            You mean there's more to life than just work?
+        </h4>
+    </section>
 </div>
+
+{% include 'components/case-studies.twig' %}
 
 {% include "components/footer.twig" %}

@@ -1,0 +1,25 @@
+// _header.scss
+
+.header {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: flex-end;    
+    padding: 1rem 2.5rem 0 0;
+    margin: 0 0 -7rem 0;
+
+    .back {
+        color: $cream;
+        font-size: 6rem;
+        margin: 0 2rem 0 0;
+        position: relative;
+        z-index: 999;
+        transition: all 0.3s;
+        transform-origin: right center;
+
+        &:hover {
+            cursor: pointer;
+            transform: scaleX(1.2);
+        }
+    }
+}
