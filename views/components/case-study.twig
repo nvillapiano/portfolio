@@ -6,21 +6,22 @@
             <h2 class="title">
                 {{title|raw}}
             </h2>
-            <h3 class="url">
+{#             <h3 class="url">
                 <a href="{{url}}">{{linkCopy}}</a>
-            </h3>
+            </h3> #}
             <h5 class="content">
                 {{content}}
             </h5>
         </div>
-        <div class="image">
-            <img src="{{imgSrc}}" alt="{{imgAlt}}">
+        <div class="main-thumb video-container">
+            <video autoplay="true" loop="true" src="{{vidArray}}"></video>
         </div>        
     </div>
+ 
     <div class="images">
-        {# <img src="{{imgArray1}}"> #}
-        <video autoplay="true" loop="true" src="{{vidArray1}}"></video>
+        <img src="{{imgArray1}}">        
         <img src="{{imgArray2}}">
         <img src="{{imgArray3}}">
     </div>
+
 </article>

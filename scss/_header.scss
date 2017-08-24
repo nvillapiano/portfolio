@@ -7,6 +7,8 @@
     justify-content: flex-end;    
     padding: 1rem 2.5rem 0 0;
     margin: 0 0 -7rem 0;
+    position: relative;
+    z-index: 999;
 
     .back {
         color: $cream;
@@ -16,10 +18,79 @@
         z-index: 999;
         transition: all 0.3s;
         transform-origin: right center;
+        //
+        opacity: 0;
+        pointer-events: none;
+
+        &.show {
+            opacity: 1;
+            pointer-events: all;
+        }
 
         &:hover {
             cursor: pointer;
             transform: scaleX(1.2);
+        }
+
+        &.blue {
+            color: $blue;
+        }
+    }
+
+    .nav {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        background: rgba($black, 0.9);
+        padding: 7rem 2rem 7rem 4rem;   
+        //
+        position: fixed;        
+        top: 0;
+        right: 0;
+        height: 100vh;
+        //
+        transform: translateX(100%);
+        transition: all 0.3s;
+
+        span {
+            margin: 0 1rem 0 0;
+            vertical-align: middle;
+        }
+
+        .middle {
+            // margin: 10vh 0;
+        }
+
+        a, a:hover, a:active, a:visited, a:link {
+            font-size: 3.6rem;
+            line-height: 1.5;
+            @include raleway-extra-bold();
+            display: block;
+            color: $cream;
+            transition: color 0.3s;
+        
+            &:hover {
+                cursor: pointer;
+                color: $blue;
+            }
+        }
+
+    }
+
+    &.show {
+
+        .circle-wrapper {
+
+            .circles {
+
+                div {
+                    border-color: rgba($cream, 0.2);
+                }
+            }
+        }
+
+        .nav {
+            transform: translateX(0);
         }
     }
 }

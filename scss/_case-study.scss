@@ -1,17 +1,24 @@
 // _case-study.scss
 
 .case-study {
-    margin: 0 0 7rem;   
+    // margin: 0 0 7rem;   
+    padding: 7rem 0 9rem;  
     //
     background: $cream;
     color: $black;            
-    padding: 0 0;   
     position: relative; 
 
     &:nth-of-type(odd) {
         background: $blue;
-        color: $cream;            
-        padding: 7rem 0;
+        color: $cream;                  
+
+        h5 {
+            color: $black;
+        }
+
+        .summary {
+            flex-direction: row-reverse;
+        }
 
         &:after {
             content: '';
@@ -25,28 +32,50 @@
         }        
     }
 
+    &:nth-of-type(even) {
+
+        h2 {
+            color: $blue;
+        }
+
+        &:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -50vw;
+            width: 200vw;
+            height: 100%;
+            background: $cream;
+            z-index: -1;            
+        }
+    }
+
     .summary {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        height: 40rem;     
+        height: 45rem;     
+        position: relative;
 
         .copy {
             width: calc(50% - 3.5rem);
 
             .content {
-                margin: 4rem 0 0;
+                margin: 2rem 0 0;
             }
         }
 
-        .image {
+        .main-thumb {
             width: calc(50% - 3.5rem);
             position: relative;
+
+            &.video-container {
+                padding-top: 0;
+                padding-bottom: 35%; // different aspect ratio                
+            }
         }
 
-        &:nth-of-type(odd) {
-            flex-direction: row-reverse;
-            position: relative;
+        &:nth-of-type(odd) {            
 
             a, a:hover, a:active, a:visited, a:link {
                 

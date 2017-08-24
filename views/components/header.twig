@@ -9,9 +9,24 @@
     </div>
 
     {% include 'components/circles.twig' with
-          {
-              circleCount: 28
-          }
-      %}  
+        {
+            circleCount: 28
+        }
+    %}  
+
+    <nav class="nav">
+        <div class="top">
+            <a name="projects"><span>🗂</span>Projects</a>
+            <a name="me"><span>😎</span>Me</a>
+        </div>
+        <div class="middle">
+            <a href="https://twitter.com/nvillapiano"><span>🐦</span>Twitter</a>
+            <a href="https://github.com/nvillapiano"><span>🐙</span>Github</a>
+            <a href="https://open.spotify.com/user/nvillapiano"><span>📀</span>Spotify</a>
+        </div>
+        <div class="bottom">
+            <a href="mailto:hey&#95;nick&#64;illapiano&#46;com"><span>👋</span>hey&#95;nick&#64;illapiano&#46;com</a>
+        </div>
+    </nav>
 
 </header>
