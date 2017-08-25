@@ -1,0 +1,15 @@
+// _footer.scss
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 999;
+    background: $black;
+    width: 100%;
+    padding: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: $cream;
+}

@@ -1,0 +1,12 @@
+<!-- Circles -->
+
+<section class="circle-wrapper">
+    <div class="circles">
+        {% for i in 1..circleCount %}
+            <div class="circle-{{i}}">
+        {% endfor %}
+        {% for i in 1..circleCount %}
+            </div>
+        {% endfor %}
+    </div>
+</section>

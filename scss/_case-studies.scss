@@ -1,0 +1,42 @@
+// _case-studies.scss
+
+.case-studies {
+    background: $cream;
+    background: $blue;
+    position: relative;
+    z-index: 10;
+    overflow-x: hidden; 
+    overflow-y: scroll;
+    //
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.4s;
+    //
+    height: 100vh;
+    overflow: hidden;
+
+    .case-studies-wrapper {
+        width: 100%;
+        padding: 0 2.5rem;
+        max-width: $contentWidth;
+        margin: 0 auto;
+        position: relative;
+
+        @media only screen and (max-width: $tablet) {
+            padding: 0 7rem;
+        }
+
+        @media only screen and (max-width: $mobile) {
+            padding: 0 2rem;
+        }
+    }
+
+    &.show {
+        pointer-events: all;
+        opacity: 1;
+        //
+        height: 100%;
+        overflow-x: hidden; 
+        overflow-y: scroll;        
+    }
+}

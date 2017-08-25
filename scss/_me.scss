@@ -1,0 +1,214 @@
+// _me.scss
+
+.me {
+    background: $cream;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 100vw;
+    min-height: 100vh;
+    z-index: 2;    
+    // padding: 7rem; 
+    //
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.4s;
+
+    .me-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        @include absolute-center;   
+        width: 100%;
+        padding: 0 7rem;
+
+        .image {
+            width: calc(50% - 3.5rem);
+        }
+
+        .copy {
+            width: calc(50% - 3.5rem);
+
+            .me-list {
+                position: relative;
+                display: inline-block;
+                width: 25.5rem;
+                height: 2.8rem;
+                overflow: hidden;
+                margin-bottom: -0.8rem;
+
+                @media only screen and (max-width: $tablet) {
+                    width: 19rem;
+                    height: 2.2rem;
+                }       
+
+                .titles {
+                    display: block;
+                    height: 100rem;                                        
+                    text-align: center;
+
+                    @keyframes titleScroll {
+                        0% {
+                            transform: translateY(0);
+                        }
+                        14% {
+                            transform: translateY(-4rem);
+                        }
+                        28% {
+                            transform: translateY(-8rem);
+                        }
+                        42% {
+                            transform: translateY(-12rem);
+                        }
+                        56% {
+                            transform: translateY(-16rem);
+                        }
+                        70% {
+                            transform: translateY(-20rem);
+                        }
+                        84% {
+                            transform: translateY(-24rem);
+                        }
+                        100% {
+                            transform: translateY(0);
+                        }
+                    } 
+                }
+
+                em {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    display: block;
+
+                    &:nth-of-type(1) {
+                        top: 0;
+                    }
+
+                    &:nth-of-type(2) {
+                        top: 4rem;
+                    }
+
+                    &:nth-of-type(3) {
+                        top: 8rem;
+                    }
+
+                    &:nth-of-type(4) {
+                        top: 12rem;
+                    }
+
+                    &:nth-of-type(5) {
+                        top: 16rem;
+                    }
+
+                    &:nth-of-type(6) {
+                        top: 20rem;
+                    }
+
+                    &:nth-of-type(7) {
+                        top: 24rem;
+                    }
+                }
+            }
+        }
+
+        @media only screen and (max-width: $laptop) {
+            padding: 0 3rem;
+
+            .image {
+                width: calc(50% - 1.5rem);
+            }
+
+            .copy {
+                width: calc(50% - 1.5rem);
+            }
+        }
+
+        @media only screen and (max-width: $tablet) {
+            flex-direction: column;
+            justify-content: flex-start;
+            padding: 3rem 2rem;
+            position: absolute;
+            left: 0;
+            transform: none;
+            // 
+            margin: 0;
+            position: absolute;
+            top: 6rem;
+
+            .image {
+                width: 100%;
+                margin: 0 0 4rem;
+            }               
+
+            .copy {
+                // width: 100%;
+                width: calc(100% - 10vw);
+            } 
+
+            &:after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 100vh;
+                background: $cream;
+                z-index: -1;
+            }
+        }
+
+        @media only screen and (max-width: $mobile) {
+            
+            .copy {
+                width: 100%;
+            }
+        }
+    }
+
+    h1 {
+        margin: 0 0 2rem;
+        color: $blue;
+    }
+
+    h3 {
+        margin: 0 0 4rem;
+    }
+
+    h4 {
+        margin: 0 0 4rem;
+    }
+
+    a, a:hover, a:active, a:visited, a:link {
+        color: $blue;
+    
+        &:after {
+            background: $blue;
+            height: 0.2rem;
+        }
+
+        &:hover {
+            
+        }
+    }
+
+    &.show {
+        opacity: 1;
+        pointer-events: all;
+
+        .me-wrapper {
+
+            .copy {
+
+                .me-list {
+
+                    .titles {
+                        animation: titleScroll 20s infinite; 
+                        animation-delay: 1s;
+                    }
+                }
+            }
+        }
+    }
+}
