@@ -116,15 +116,41 @@
             top: 0;
             left: 0;
             padding: 0;
-            width: 100%;            
+            width: 100%;    
+            max-width: 100%;        
+
+            &.expand {
+
+                &:after {
+                    transform: rotate(-8deg);
+                }
+            }  
+
+            &.contract {            
+
+                &:after {
+                    transform: rotate(-8deg);
+                }
+            }            
         }
 
         .projects-trigger {
             background: $blue;
             padding: 10rem 2rem 0;
+            height: calc(50% - 3rem);
 
             &:after {
-                display: none;
+                content: '';
+                position: absolute;
+                bottom: -5rem;
+                left: -50vw;
+                width: 200vw;
+                height: 10rem;
+                background: #2ac0f0;
+                top: initial;
+                transform: none;
+                transition: none;
+                transform: rotate(-8deg);
             }
         }
 
@@ -135,4 +161,79 @@
             justify-content: flex-end;          
         }
     }
+
+    @media only screen and (max-aspect-ratio: 4/3) and (max-width: $landscape) {
+        
+        .container {
+            // background: red;
+        }
+
+        %homepage-trigger {
+
+            &:after {
+                left: calc(-255vw - 8rem);
+                transform: skew(-40deg);
+            }
+        }
+    }
+
+    @media only screen and (max-aspect-ratio: 4/3) and (max-width: 1280px) and (min-height: 900px) {
+        
+        .container {
+            // background: red;
+        }
+
+        %homepage-trigger {
+
+            &:after {
+                left: calc(-260vw - 8rem);
+                transform: skew(-33deg);
+            }
+        }
+    } 
+
+    @media only screen and (max-aspect-ratio: 4/3) and (min-width: 1280px) and (min-height: 900px) {
+        
+        .container {
+            // background: green;
+        }
+
+        %homepage-trigger {
+
+            &:after {
+                left: calc(-255vw - 8rem);
+                transform: skew(-40deg);
+            }
+        }
+    }      
+
+    @media only screen and (max-aspect-ratio: 4/3) and (max-width: 900px) and (min-height: 900px) {
+        
+        .container {
+            // background: green;
+        }
+
+        %homepage-trigger {
+
+            &:after {
+                left: calc(-255vw - 8rem);
+                transform: skew(-23deg);
+            }
+        }
+    }            
+
+    @media only screen and (max-aspect-ratio: 4/3) and (max-width: $mobile) {
+        
+        .container {
+            // background: green;
+        }
+
+        %homepage-trigger {
+
+            &:after {
+                left: -50vw;
+                transform: rotate(-8deg);
+            }
+        }
+    }    
 }

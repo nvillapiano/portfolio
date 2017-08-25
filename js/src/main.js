@@ -77,9 +77,7 @@ function navToggle() {
     $('.circles, .nav').click( function() {
         $('.header').toggleClass('show');                
         $('.back').removeClass('blue');
-        // if ( $('.back').hasClass('show') ) {
-        //     $('.back').removeClass('show');
-        // }
+        //
         if ( $('.header').hasClass('show') && $('.case-studies').hasClass('show') ) {
             $('.back').toggleClass('show');
             console.log('nav show / case studies show')
@@ -100,13 +98,24 @@ function navToggle() {
         $('.me').removeClass('show');
         setTimeout( function() {
             projectsTrigger();
-        }, 10)        
+        }, 10)    
+        //
+        if ( $('.case-studies').hasClass('show') ) {
+            // $('.header').toggleClass('show');                
+            // $('.back').removeClass('blue');            
+            console.log('return');
+        }    
     })
     $('a[name="me"]').click( function() {
         $('.case-studies').removeClass('show');
         setTimeout( function() {
             meTrigger();
         }, 10)  
+
+        if ( $('.circle-wrapper').hasClass('cream') ) {
+            $('.circle-wrapper').removeClass('cream'); 
+            console.log('has cream, removed');
+        }
     })    
 }
 

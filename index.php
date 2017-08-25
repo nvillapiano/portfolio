@@ -14,7 +14,7 @@ $app = new \Slim\Slim(
 
 $app->get( '/', function() use ( $app )
 {
-  $title = "Home";
+  $title = "Nick Villapiano - Internet Person";
   $body_class = "home fade";
   $app->render( 'home.twig', array(
     'title' => $title,
