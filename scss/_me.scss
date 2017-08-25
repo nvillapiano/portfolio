@@ -1,0 +1,148 @@
+// _me.scss
+
+.me {
+    background: $cream;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 100vw;
+    min-height: 100vh;
+    z-index: 2;    
+    padding: 7rem; 
+    //
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.4s;
+
+    .me-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .image {
+            width: calc(50% - 3.5rem);
+        }
+
+        .copy {
+            width: calc(50% - 3.5rem);
+
+            .me-list {
+                position: relative;
+                display: inline-block;
+                width: 25.5rem;
+                height: 2.8rem;
+                overflow: hidden;
+                margin-bottom: -0.8rem;
+
+                .titles {
+                    display: block;
+                    height: 100rem;                                        
+                    text-align: center;
+
+                    @keyframes titleScroll {
+                        0% {
+                            transform: translateY(0);
+                        }
+                        14% {
+                            transform: translateY(-4rem);
+                        }
+                        28% {
+                            transform: translateY(-8rem);
+                        }
+                        42% {
+                            transform: translateY(-12rem);
+                        }
+                        56% {
+                            transform: translateY(-16rem);
+                        }
+                        70% {
+                            transform: translateY(-20rem);
+                        }
+                        84% {
+                            transform: translateY(-24rem);
+                        }
+                        100% {
+                            transform: translateY(0);
+                        }
+                    } 
+                }
+
+                em {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    display: block;
+
+                    &:nth-of-type(1) {
+                        top: 0;
+                    }
+
+                    &:nth-of-type(2) {
+                        top: 4rem;
+                    }
+
+                    &:nth-of-type(3) {
+                        top: 8rem;
+                    }
+
+                    &:nth-of-type(4) {
+                        top: 12rem;
+                    }
+
+                    &:nth-of-type(5) {
+                        top: 16rem;
+                    }
+
+                    &:nth-of-type(6) {
+                        top: 20rem;
+                    }
+
+                    &:nth-of-type(7) {
+                        top: 24rem;
+                    }
+                }
+            }
+        }
+    }
+
+    h1 {
+        margin: 0 0 2rem;
+        color: $blue;
+    }
+
+    h3 {
+        margin: 0 0 2rem;
+    }
+
+    h4 {
+        margin: 0 0 4rem;
+    }
+
+    a, a:hover, a:active, a:visited, a:link {
+        color: $blue;
+    
+        &:hover {
+            
+        }
+    }
+
+    &.show {
+        opacity: 1;
+        pointer-events: all;
+
+        .me-wrapper {
+
+            .copy {
+
+                .me-list {
+
+                    .titles {
+                        animation: titleScroll 20s infinite; 
+                        animation-delay: 2s;
+                    }
+                }
+            }
+        }
+    }
+}

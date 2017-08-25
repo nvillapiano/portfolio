@@ -14,55 +14,94 @@ function fadeIn() {
     })
 }
 // Expand homepage sections
+function projectsTrigger() { 
+    $('.projects-trigger').toggleClass('expand');
+    //
+    setTimeout( function() {
+        $('.case-studies').toggleClass('show');
+        $('.back').toggleClass('show');
+        $('body').removeClass('no-overflow');
+        $('.circle-wrapper').addClass('cream');
+        $('.back').addClass('show');
+        window.scrollTo(0, 0);
+    }, 300)        
+    console.log('projectsTrigger');
+}
+//
+function meTrigger() {   
+    $('.projects-trigger, .me-trigger').toggleClass('contract fade-out');
+    //
+    setTimeout( function() {            
+        $('.me').addClass('show');
+        $('body').toggleClass('no-overflow');            
+        $('.back').toggleClass('show blue');
+        window.scrollTo(0, 0);
+    }, 300)    
+    console.log('meTrigger');
+}
+//
+function backTrigger() {
+    $('.case-studies').removeClass('show'); 
+    $('.me').removeClass('show');       
+    //
+    setTimeout( function() {
+        $('.back').removeClass('show');
+        $('.back').removeClass('blue'); 
+        $('.projects-trigger, .me-trigger').removeClass('expand');
+        $('.projects-trigger, .me-trigger').removeClass('fade-out');
+        $('.projects-trigger, .me-trigger').removeClass('contract');
+        $('body').addClass('no-overflow');  
+        $('.circle-wrapper').removeClass('cream');          
+    }, 300)
+    $('body').animate({ 
+        scrollTop: "0" 
+    }, 500);    
+}
+//
 function expandHome() {
     // Click Projects
     $('.projects-trigger').click( function() {
-        $('.projects-trigger').toggleClass('expand');
-        //
-        setTimeout( function() {
-            $('.case-studies').toggleClass('show');
-            $('.back').toggleClass('show');
-            $('body').removeClass('no-overflow');
-            $('.circle-wrapper').addClass('cream');
-            window.scrollTo(0, 0);
-        }, 300)
-    })  
+        projectsTrigger();
+    })     
     // Click Me
     $('.me-trigger').click( function() {
-        $('.projects-trigger').toggleClass('contract fade-out');
-        // $('.projects-trigger').toggleClass('fade-out');
-        //
-        setTimeout( function() {            
-            // $('.case-studies').toggleClass('show');
-            // $('body').toggleClass('no-overflow');
-            $('.me-trigger').toggleClass('fade-out');
-            $('.back').toggleClass('show blue');
-            window.scrollTo(0, 0);
-        }, 300)
-    })  
+        meTrigger();
+    })          
     // Click back
     $('.back').click( function() {
-        $('.case-studies').removeClass('show');        
-        //
-        setTimeout( function() {
-            $('.back').removeClass('show');
-            $('.back').removeClass('blue'); 
-            $('.projects-trigger, .me-trigger').removeClass('expand');
-            $('.projects-trigger, .me-trigger').removeClass('fade-out');
-            $('.projects-trigger, .me-trigger').removeClass('contract');
-            $('body').addClass('no-overflow');  
-            $('.circle-wrapper').removeClass('cream');          
-        }, 300)
-        $('body').animate({ 
-            scrollTop: "0" 
-        }, 500);
-    })          
+        backTrigger();   
+    })              
 }
 // Nav toggle
 function navToggle() {
-    $('.circles').click( function() {
-        $('.header').toggleClass('show');
+    $('.circles, .nav').click( function() {
+        $('.header').toggleClass('show');        
+        $('.back').removeClass('show');
+        $('.back').removeClass('blue');
     })
+    $('a[name="home"]').click( function() {
+        setTimeout( function() {
+            $('.case-studies, .me').removeClass('show');
+            $('.projects-trigger, .me-trigger').removeClass('expand contract fade-out');
+            // $('.me-trigger').removeClass('contract fade-out');
+            $('.header').removeClass('show');        
+            $('.back').removeClass('show');
+            $('.back').removeClass('blue');  
+            $('.circle-wrapper').removeClass('cream');   
+        }, 10)     
+    })
+    $('a[name="projects"]').click( function() {
+        $('.me').removeClass('show');
+        setTimeout( function() {
+            projectsTrigger();
+        }, 10)        
+    })
+    $('a[name="me"]').click( function() {
+        $('.case-studies').removeClass('show');
+        setTimeout( function() {
+            meTrigger();
+        }, 10)  
+    })    
 }
 
 
