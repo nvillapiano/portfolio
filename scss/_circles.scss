@@ -45,5 +45,9 @@
         //
         box-sizing: content-box;
         transition: border-color 0.3s;
+
+        @media only screen and (max-width: $mobile) {
+            border-color: rgba($cream, 0.2);
+        }
     }
 }

@@ -481,6 +481,13 @@ h1 {
   font-size: 6rem;
   text-transform: uppercase;
   margin: 0 0 2rem;
+  font-size: calc(1.8rem + 3vw);
+}
+
+@media only screen and (max-width: 768px) {
+  h1 {
+    font-size: 4.2rem;
+  }
 }
 
 h2 {
@@ -488,6 +495,13 @@ h2 {
   font-weight: 800;
   font-size: 5rem;
   margin: 0 0 0.4rem;
+  font-size: calc(1.4rem + 2.4vw);
+}
+
+@media only screen and (max-width: 768px) {
+  h2 {
+    font-size: 3.2rem;
+  }
 }
 
 h2 sup {
@@ -500,12 +514,27 @@ h3 {
   font-family: 'Raleway', sans-serif;
   font-weight: 700;
   font-size: 3.6rem;
+  font-size: calc(1.4rem + 1.6vw);
+}
+
+@media only screen and (max-width: 768px) {
+  h3 {
+    font-size: 2.6rem;
+  }
 }
 
 h4 {
   font-family: 'Raleway', sans-serif;
   font-weight: 600;
   font-size: 2.4rem;
+  line-height: 1.2;
+  font-size: calc(1rem + 1vw);
+}
+
+@media only screen and (max-width: 768px) {
+  h4 {
+    font-size: 1.8rem;
+  }
 }
 
 h5 {
@@ -535,6 +564,10 @@ a, a:hover, a:active, a:visited, a:link {
   position: relative;
 }
 
+a:hover:after, a:hover:hover:after, a:active:hover:after, a:visited:hover:after, a:link:hover:after {
+  max-width: 100rem;
+}
+
 a:after, a:hover:after, a:active:after, a:visited:after, a:link:after {
   content: '';
   position: absolute;
@@ -543,6 +576,9 @@ a:after, a:hover:after, a:active:after, a:visited:after, a:link:after {
   width: 100%;
   height: 0.1rem;
   background: inherit;
+  max-width: 0;
+  overflow: hidden;
+  transition: max-width 0.6s;
 }
 
 .button:hover, button:hover {
@@ -620,12 +656,28 @@ a:after, a:hover:after, a:active:after, a:visited:after, a:link:after {
   color: #2ac0f0;
 }
 
+@media only screen and (max-width: 660px) {
+  .header .nav {
+    width: 100%;
+    padding: 7rem 2rem 7rem 2rem;
+  }
+  .header .nav a, .header .nav a:hover, .header .nav a:active, .header .nav a:visited, .header .nav a:link {
+    font-size: 2.4rem;
+  }
+}
+
 .header.show .circle-wrapper .circles div {
   border-color: rgba(255, 255, 242, 0.2);
 }
 
 .header.show .nav {
   transform: translateX(0);
+}
+
+@media only screen and (max-width: 660px) {
+  .header .back.blue + .circle-wrapper .circles div {
+    border-color: rgba(42, 192, 240, 0.2);
+  }
 }
 
 .footer {
@@ -728,6 +780,35 @@ a:after, a:hover:after, a:active:after, a:visited:after, a:link:after {
   display: none;
 }
 
+@media only screen and (max-width: 660px) {
+  .home .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+  }
+  .home .projects-trigger, .home .me-trigger {
+    position: relative;
+    top: 0;
+    left: 0;
+    padding: 0;
+    width: 100%;
+  }
+  .home .projects-trigger {
+    background: #2ac0f0;
+    padding: 10rem 2rem 0;
+  }
+  .home .projects-trigger:after {
+    display: none;
+  }
+  .home .me-trigger {
+    padding: 0 2rem 10rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+}
+
 .circle-wrapper {
   position: relative;
   width: 5rem;
@@ -765,6 +846,12 @@ a:after, a:hover:after, a:active:after, a:visited:after, a:link:after {
   transition: border-color 0.3s;
 }
 
+@media only screen and (max-width: 660px) {
+  .circles div {
+    border-color: rgba(255, 255, 242, 0.2);
+  }
+}
+
 .case-studies {
   background: #fffff2;
   background: #2ac0f0;
@@ -775,6 +862,8 @@ a:after, a:hover:after, a:active:after, a:visited:after, a:link:after {
   pointer-events: none;
   opacity: 0;
   transition: opacity 0.4s;
+  height: 100vh;
+  overflow: hidden;
 }
 
 .case-studies .case-studies-wrapper {
@@ -784,9 +873,24 @@ a:after, a:hover:after, a:active:after, a:visited:after, a:link:after {
   margin: 0 auto;
 }
 
+@media only screen and (max-width: 768px) {
+  .case-studies .case-studies-wrapper {
+    padding: 0 7rem;
+  }
+}
+
+@media only screen and (max-width: 660px) {
+  .case-studies .case-studies-wrapper {
+    padding: 0 2rem;
+  }
+}
+
 .case-studies.show {
   pointer-events: all;
   opacity: 1;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: scroll;
 }
 
 .case-study {
@@ -807,6 +911,12 @@ a:after, a:hover:after, a:active:after, a:visited:after, a:link:after {
 
 .case-study:nth-of-type(odd) .summary {
   flex-direction: row-reverse;
+}
+
+@media only screen and (max-width: 768px) {
+  .case-study:nth-of-type(odd) .summary {
+    flex-direction: column;
+  }
 }
 
 .case-study:nth-of-type(odd):after {
@@ -877,6 +987,22 @@ a:after, a:hover:after, a:active:after, a:visited:after, a:link:after {
   color: #2ac0f0;
 }
 
+@media only screen and (max-width: 768px) {
+  .case-study .summary {
+    flex-direction: column;
+    align-items: flex-start;
+    height: 100%;
+  }
+  .case-study .summary .copy {
+    margin-bottom: 4rem;
+    width: calc(100% - 10vw);
+  }
+  .case-study .summary .main-thumb.video-container {
+    width: 100%;
+    padding-bottom: 74%;
+  }
+}
+
 .case-study .images {
   display: flex;
   align-items: center;
@@ -889,6 +1015,28 @@ a:after, a:hover:after, a:active:after, a:visited:after, a:link:after {
   width: calc(33.333% - 2rem);
 }
 
+@media only screen and (max-width: 660px) {
+  .case-study .images {
+    flex-direction: column;
+  }
+  .case-study .images img, .case-study .images video {
+    width: 100%;
+    margin: 0 0 2rem;
+  }
+  .case-study .images img:nth-of-type(2), .case-study .images video:nth-of-type(2) {
+    order: 3;
+  }
+}
+
+@media only screen and (max-width: 660px) {
+  .case-study {
+    padding: 7rem 0 4rem;
+  }
+  .case-study .summary .copy {
+    width: 100%;
+  }
+}
+
 .me {
   background: #fffff2;
   position: absolute;
@@ -898,7 +1046,6 @@ a:after, a:hover:after, a:active:after, a:visited:after, a:link:after {
   width: 100vw;
   min-height: 100vh;
   z-index: 2;
-  padding: 7rem;
   opacity: 0;
   pointer-events: none;
   transition: all 0.4s;
@@ -908,6 +1055,12 @@ a:after, a:hover:after, a:active:after, a:visited:after, a:link:after {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  width: 100%;
+  padding: 0 7rem;
 }
 
 .me .me-wrapper .image {
@@ -925,6 +1078,13 @@ a:after, a:hover:after, a:active:after, a:visited:after, a:link:after {
   height: 2.8rem;
   overflow: hidden;
   margin-bottom: -0.8rem;
+}
+
+@media only screen and (max-width: 768px) {
+  .me .me-wrapper .copy .me-list {
+    width: 19rem;
+    height: 2.2rem;
+  }
 }
 
 .me .me-wrapper .copy .me-list .titles {
@@ -995,13 +1155,62 @@ a:after, a:hover:after, a:active:after, a:visited:after, a:link:after {
   top: 24rem;
 }
 
+@media only screen and (max-width: 1280px) {
+  .me .me-wrapper {
+    padding: 0 3rem;
+  }
+  .me .me-wrapper .image {
+    width: calc(50% - 1.5rem);
+  }
+  .me .me-wrapper .copy {
+    width: calc(50% - 1.5rem);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .me .me-wrapper {
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 3rem 2rem;
+    position: absolute;
+    left: 0;
+    transform: none;
+    margin: 0;
+    position: absolute;
+    top: 6rem;
+  }
+  .me .me-wrapper .image {
+    width: 100%;
+    margin: 0 0 4rem;
+  }
+  .me .me-wrapper .copy {
+    width: calc(100% - 10vw);
+  }
+  .me .me-wrapper:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: #fffff2;
+    z-index: -1;
+  }
+}
+
+@media only screen and (max-width: 660px) {
+  .me .me-wrapper .copy {
+    width: 100%;
+  }
+}
+
 .me h1 {
   margin: 0 0 2rem;
   color: #2ac0f0;
 }
 
 .me h3 {
-  margin: 0 0 2rem;
+  margin: 0 0 4rem;
 }
 
 .me h4 {
@@ -1012,6 +1221,11 @@ a:after, a:hover:after, a:active:after, a:visited:after, a:link:after {
   color: #2ac0f0;
 }
 
+.me a:after, .me a:hover:after, .me a:active:after, .me a:visited:after, .me a:link:after {
+  background: #2ac0f0;
+  height: 0.2rem;
+}
+
 .me.show {
   opacity: 1;
   pointer-events: all;
@@ -1019,7 +1233,7 @@ a:after, a:hover:after, a:active:after, a:visited:after, a:link:after {
 
 .me.show .me-wrapper .copy .me-list .titles {
   animation: titleScroll 20s infinite;
-  animation-delay: 2s;
+  animation-delay: 1s;
 }
 
 /*# sourceMappingURL=maps/index.css.map */

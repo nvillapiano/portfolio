@@ -9,7 +9,7 @@
     width: 100vw;
     min-height: 100vh;
     z-index: 2;    
-    padding: 7rem; 
+    // padding: 7rem; 
     //
     opacity: 0;
     pointer-events: none;
@@ -19,6 +19,9 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
+        @include absolute-center;   
+        width: 100%;
+        padding: 0 7rem;
 
         .image {
             width: calc(50% - 3.5rem);
@@ -34,6 +37,11 @@
                 height: 2.8rem;
                 overflow: hidden;
                 margin-bottom: -0.8rem;
+
+                @media only screen and (max-width: $tablet) {
+                    width: 19rem;
+                    height: 2.2rem;
+                }       
 
                 .titles {
                     display: block;
@@ -104,6 +112,59 @@
                 }
             }
         }
+
+        @media only screen and (max-width: $laptop) {
+            padding: 0 3rem;
+
+            .image {
+                width: calc(50% - 1.5rem);
+            }
+
+            .copy {
+                width: calc(50% - 1.5rem);
+            }
+        }
+
+        @media only screen and (max-width: $tablet) {
+            flex-direction: column;
+            justify-content: flex-start;
+            padding: 3rem 2rem;
+            position: absolute;
+            left: 0;
+            transform: none;
+            // 
+            margin: 0;
+            position: absolute;
+            top: 6rem;
+
+            .image {
+                width: 100%;
+                margin: 0 0 4rem;
+            }               
+
+            .copy {
+                // width: 100%;
+                width: calc(100% - 10vw);
+            } 
+
+            &:after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 100vh;
+                background: $cream;
+                z-index: -1;
+            }
+        }
+
+        @media only screen and (max-width: $mobile) {
+            
+            .copy {
+                width: 100%;
+            }
+        }
     }
 
     h1 {
@@ -112,7 +173,7 @@
     }
 
     h3 {
-        margin: 0 0 2rem;
+        margin: 0 0 4rem;
     }
 
     h4 {
@@ -122,6 +183,11 @@
     a, a:hover, a:active, a:visited, a:link {
         color: $blue;
     
+        &:after {
+            background: $blue;
+            height: 0.2rem;
+        }
+
         &:hover {
             
         }
@@ -139,7 +205,7 @@
 
                     .titles {
                         animation: titleScroll 20s infinite; 
-                        animation-delay: 2s;
+                        animation-delay: 1s;
                     }
                 }
             }

@@ -101,4 +101,38 @@
             // right: calc(-250vw - 8rem);                        
         }        
     }
+
+    @media only screen and (max-width: $mobile) {
+        
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100vh;            
+        }
+
+        %homepage-trigger {
+            position: relative;
+            top: 0;
+            left: 0;
+            padding: 0;
+            width: 100%;            
+        }
+
+        .projects-trigger {
+            background: $blue;
+            padding: 10rem 2rem 0;
+
+            &:after {
+                display: none;
+            }
+        }
+
+        .me-trigger {
+            padding: 0 2rem 10rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;          
+        }
+    }
 }

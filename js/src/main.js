@@ -75,9 +75,15 @@ function expandHome() {
 // Nav toggle
 function navToggle() {
     $('.circles, .nav').click( function() {
-        $('.header').toggleClass('show');        
-        $('.back').removeClass('show');
+        $('.header').toggleClass('show');                
         $('.back').removeClass('blue');
+        // if ( $('.back').hasClass('show') ) {
+        //     $('.back').removeClass('show');
+        // }
+        if ( $('.header').hasClass('show') && $('.case-studies').hasClass('show') ) {
+            $('.back').toggleClass('show');
+            console.log('nav show / case studies show')
+        }
     })
     $('a[name="home"]').click( function() {
         setTimeout( function() {

@@ -1,12 +1,12 @@
 @charset "UTF-8";
 @import "normalize";
 
+@import "variables";
 @import "colors";
 @import "mixins";
 @import "fonts";
 @import "global";
 @import "typography";
-@import "variables";
 
 @import "header";
 @import "footer";
